@@ -1,0 +1,46 @@
+.sign-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.sign-buttons {
+  display: flex;
+  justify-content: end;
+}
+
+.buttons{
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  margin: 20px 20px 0 0;
+  padding: 10px 15px;
+  border: solid 2px white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold!important;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  z-index: 3;
+}
+
+body:not(.dark) .buttons:hover {
+  color: red;
+}
+
+
+body.dark .buttons:hover {
+    border-color: red;
+}
+
+.help {
+  margin: 20px 22px;
+  text-align: right;
+  z-index: 3;
+}
+
+.help a {
+  color: red;
+  font-weight: bold!important; 
+  text-decoration: none;
+  font-weight: 500;
+}

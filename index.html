@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="buttons.css" />
     <link rel="stylesheet" href="accordion.css" />
-    <script defer src="theme.js"></script>
+    <link rel="stylesheet" href="modal.css" />
     <script src="api-call.js"></script>
+    <script defer src="theme.js"></script>
+    <script src="modal.js"></script>
   </head>
   <body>
     
@@ -31,11 +33,11 @@
 
     <div class="sign-container">
       <div class="sign-buttons">
-        <div name="auth-button-register" class="buttons"><span>ΕΓΓΡΑΦΗ</span></div>
-        <div name="auth-button-login" class="buttons"><span>ΕΙΔΟΣΟΣ</span></div>
-    </div>
+        <div id="modal-button-register" class="buttons"><span>ΕΓΓΡΑΦΗ</span></div>
+        <div id="modal-button-login" class="buttons"><span>ΕΙΣΟΔΟΣ</span></div>
+      </div>
     
-    <div class="help">
+      <div class="help">
         Χρειάζεσαι βοήθεια; Κάνε κλικ <a href="help.html">Εδώ!</a>
       </div>
     </div>
@@ -95,8 +97,6 @@
                 <li>#;</li>
               </ul>
             </div>
-            <i class="icon ion-md-arrow-forward"></i>
-            <i class="icon ion-md-arrow-down"></i>
           </a>
           <div class="answer">
             <p>Με την εγγραφή σου, αποκτάς τον έλεγχο του περιεχομένου που σου εμφανίζεται! Δημιούργησε τις δικές σου λίστες ροής και μοιράσου τις με άλλους χρήστες που σε εμπνέουν. Οι λίστες τους θα εμφανίζονται στο προφίλ τους για να ανακαλύπτεις συνεχώς νέο, ενδιαφέρον περιεχόμενο!
@@ -104,6 +104,32 @@
           </div>
           <hr>
         </div>
+      </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form class="register-form" method="post">
+          <div class="label-input">
+            <label for="username">ΟΝΟΜΑ ΧΡΗΣΤΗ</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="label-input">
+          <label for="password">ΚΩΔΙΚΟΣ</label>
+          <input type="password" id="password" name="password" required>
+          </div>
+          <div>
+            <input type="checkbox" id="remember-me" name="remember-me">
+            <label for="remember-me">Να με θυμάσαι</label>
+          </div>
+          <div>
+          <div id="auth-button-login" class="buttons"><span>ΕΙΣΟΔΟΣ</span></div>
+          
+          <div id="login-a">
+            Ξέχασες τον <a href="#">κωδικό</a> σου;
+          </div>
+        </form>
       </div>
     </div>
 

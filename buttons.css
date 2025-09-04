@@ -14,6 +14,7 @@
   color: rgb(255, 255, 255);
   margin: 20px 20px 0 0;
   padding: 10px 15px;
+  width: 50%;
   border: solid 2px white;
   border-radius: 6px;
   cursor: pointer;
@@ -23,13 +24,12 @@
   z-index: 3;
 }
 
-body:not(.dark) .buttons:hover {
+body:not(.dark) .buttons:not(#auth-button-login):hover {
   color: red;
 }
 
-
-body.dark .buttons:hover {
-    border-color: red;
+body.dark .buttons:not(#auth-button-login):hover {
+  border-color: red;
 }
 
 .help {
@@ -38,9 +38,13 @@ body.dark .buttons:hover {
   z-index: 3;
 }
 
-.help a {
+a {
   color: red;
   font-weight: bold!important; 
   text-decoration: none;
   font-weight: 500;
+}
+
+a:hover {
+    color: rgb(195, 0, 0);
 }

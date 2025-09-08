@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="sidenav.css" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="buttons.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <script src="theme.js"></script>
+  </head>
+  <body>
+    
+    <div class="mode-tog"></div>
+
+    <div class="dark-mode-container">
+      <div class="dark-mode"></div>
+    </div>
+    
+    <nav class="sidenav">
+      <a href="main.php" class="logo-link">
+        <img class="logo" src="Images/logo.png" alt="logo" />
+      </a>
+      <a href="#" id="logout-btn" class="logout-button"><span>ΑΠΟΣΥΝΔΕΣΗ</span></a>
+    </nav>
+
+    <main class="profile-container">
+        <header class="profile-header">
+            <div class="profile-header-buttons">
+              <div class="buttons auth-button-modal" data-type="edit"><span>Edit Profile</span></div>
+              <div class="buttons" id="delete-profile-btn" style="background-color: #ff0800; border-color: #ff0800;"><span>Delete Profile</span></div>
+            </div>
+        </header>
+
+        <section class="user-details">
+            <h2>Στοιχεία Χρήστη</h2>
+            <div class="detail-item">
+                <span class="detail-label">Όνομα:</span>
+                <span id="first-name"></span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Επώνυμο:</span>
+                <span id="last-name"></span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Όνομα Χρήστη:</span>
+                <span id="username"></span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Email:</span>
+                <span id="email"></span>
+            </div>
+        </section>
+
+        <section class="user-feeds">
+            <h2>Οι Playlists μου</h2>
+            <div id="my-playlists-grid" class="playlists-grid">
+            </div>
+        </section>
+    </main>
+
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="editForm" class="register-form" method="post">
+          <div class="label-input">
+            <label for="firstname">ΟΝΟΜΑ</label>
+            <input type="text" name="firstname" required>
+          </div>
+          <div class="label-input">
+            <label for="lastname">ΕΠΩΝΥΜΟ</label>
+            <input type="text" name="lastname" required>
+          </div>
+          <div class="label-input">
+            <label for="username">ΟΝΟΜΑ ΧΡΗΣΤΗ</label>
+            <input type="text" name="username" required>
+          </div>
+          <div class="label-input">
+            <label for="email">EMAIL</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="label-input">
+            <label for="password">ΝΕΟΣ ΚΩΔΙΚΟΣ (ΑΦΗΣΤΕ ΚΕΝΟ ΓΙΑ ΝΑ ΜΗΝ ΑΛΛΑΞΕΙ)</label>
+            <input type="password" name="password">
+          </div>
+          <div class="buttons auth-button"><span>ΑΝΑΝΕΩΣΗ</span></div>
+          <div class="error-messagebox" style="color:red; font-weight:bold; text-align:center; margin-top:10px;">
+            &nbsp;
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="deleteForm" class="register-form" onsubmit="return false;">
+            <h2>Delete Account</h2>
+            <p style="text-align: center; margin-bottom: 1rem;">This action is permanent and cannot be undone. To confirm, please enter your password.</p>
+            <div class="label-input">
+                <label for="password_confirm">Password</label>
+                <input type="password" name="password_confirm" required>
+            </div>
+            <div class="buttons auth-button" id="confirm-delete-btn" style="background-color: #ff0800;"><span>CONFIRM DELETION</span></div>
+            <div class="error-messagebox" style="color:red; font-weight:bold; text-align:center; margin-top:10px;">
+                &nbsp;
+            </div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
+
